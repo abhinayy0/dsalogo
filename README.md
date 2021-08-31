@@ -1,2 +1,3 @@
 # dsalogo
-Assorted questions of dsalgo with solution by love babbar
+
+Assorted questions of dsalgo provided by love babbar.
