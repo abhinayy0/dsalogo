@@ -1,11 +1,5 @@
 from collections import deque
 
-# class Node:
-
-#     def __init__(self) -> None:
-#         self.data = None
-#         self.next = None
-
 class Graph:
     def __init__(self):
         self.vertices = set()
@@ -40,17 +34,26 @@ class Graph:
         q= deque()
         q.append(start)
 
-        while q:
-            node = q.popleft()
-            print(node, end=" ")
-            for ele in self.graph[node]:
-                if not visited[ele]:
-                    q.append(ele)
-                    visited[ele]=True
+        def bfsInner():
+            while q:
+                node = q.popleft()
+                print(node, end=" ")
+                for ele in self.graph[node]:
+                    if not visited[ele]:
+                        q.append(ele)
+                        visited[ele]=True
+        bfsInner()
+        for element in self.vertices:
+            if not visited[element]:
+                visited[element]=True
+                q.append(element)
+                bfsInner()
 
-graph = Graph()
-graph.add_edge(4,3, True)
-graph.add_edge(4,5)
-graph.add_edge(1,2, True)
-graph.display()
-graph.bfs(4)
+        
+if __name__=="__main__":
+    graph = Graph()
+    graph.add_edge(4,3, True)
+    graph.add_edge(4,5)
+    graph.add_edge(1,2, True)
+    graph.display()
+    graph.bfs(4)

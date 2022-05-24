@@ -29,12 +29,12 @@ class Graph:
                     q.append(i)
                     visited[i]=True
             
-
-graph = Graph(5)
-graph.add_edge(4,3)
-graph.add_edge(1,2)
-graph.display()
-graph.bfs(4)
+if __name__=="__main__":
+    graph = Graph(5)
+    graph.add_edge(4,3)
+    graph.add_edge(1,2)
+    graph.display()
+    graph.bfs(4)
 
 
 """
